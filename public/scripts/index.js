@@ -1,13 +1,17 @@
 function generateResultCard(result) {
-  const card = document.createElement("div");
+  const card = document.createElement("div").setAttribute('class', "quote");
   card.classList.add("result-card");
   card.innerHTML = `
-        <h3>${result.title}</h3>
-        <p>${result.text}</p>
-        <p>${result.image_link}</p>
+        <div class="img">
+          <img src="${result.image_link}" class="quote__img">
+        </div>
+        <h2 class="quotes__name">${result.title}</h2>
+        <p class="quotes">${result.text}</p>
     `;
   return card;
 }
+
+
 
 document
   .getElementById("searchForm")
@@ -36,7 +40,10 @@ async function handleFormSubmit(event) {
       const resultCard = generateResultCard(result);
       resultsContainer.appendChild(resultCard);
     });
+    resultsContainer.style.display = "block";
   } catch (error) {
     console.error(error);
   }
 }
+
+document.getElementById("searchBtn").addEventListener('submit', handleFormSubmit);

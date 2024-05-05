@@ -2,6 +2,8 @@ const data = require('../data/quotes.json');
 
 const searchController = (req, res) => {
   try {
+    console.log(req.body);
+
     const results = data;
     res.json({ results });
   } catch (error) {
