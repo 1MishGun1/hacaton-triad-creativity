@@ -3,8 +3,8 @@ function generateResultCard(result) {
   card.classList.add("result-card");
   card.innerHTML = `
         <h3>${result.title}</h3>
-        <p>${result.description}</p>
-        <a href="${result.link}" target="_blank">Подробнее</a>
+        <p>${result.text}</p>
+        <p>${result.image_link}</p>
     `;
   return card;
 }

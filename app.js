@@ -4,6 +4,7 @@ const path = require("path");
 const errorHandler = require("./middlewares/errorHandler");
 const mainRoute = require("./routes/main");
 const searchRoute = require("./routes/search");
+const quotesRoute = require("./routes/quotes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,7 +14,8 @@ app.use(
   errorHandler,
   express.static(path.join(__dirname, "public")),
   mainRoute,
-  searchRoute
+  searchRoute,
+  quotesRoute
 );
 
 app.listen(PORT, () =>

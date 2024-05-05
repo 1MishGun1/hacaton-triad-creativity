@@ -1,11 +1,8 @@
+const data = require('../data/quotes.json');
+
 const searchController = (req, res) => {
   try {
-    // Здесь будет код для обработки запроса поиска
-    // В данном примере просто возвращаем заглушку
-    const results = [
-      { title: "Результат 1", description: "Описание результата 1", link: "#" },
-      { title: "Результат 2", description: "Описание результата 2", link: "#" },
-    ];
+    const results = data;
     res.json({ results });
   } catch (error) {
     console.error(error);
